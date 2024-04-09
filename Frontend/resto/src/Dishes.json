@@ -1,0 +1,165 @@
+{
+    "dishes": [
+      {
+        "id": 1,
+        "name": "Sushi",
+        "img": "https://cdn.britannica.com/52/128652-050-14AD19CA/Maki-zushi.jpg",
+        "cuisine": "Japanese",
+        "description": "Delicious bite-sized rolls of rice and fresh fish, often served with soy sauce, wasabi, and pickled ginger.",
+        "price_rs": 1149.12
+      },
+      {
+        "id": 2,
+        "name": "Pizza Margherita",
+        "img": "https://img.freepik.com/free-photo/pizza_144627-39500.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712448000&semt=ais",
+        "cuisine": "Italian",
+        "description": "A classic Italian pizza topped with tomato sauce, mozzarella cheese, fresh basil leaves, and a drizzle of olive oil.",
+        "price_rs": 903.13
+      },
+      {
+        "id": 3,
+        "name": "Pad Thai",
+        "img": "https://media.istockphoto.com/id/510163478/photo/pad-thai.jpg?s=612x612&w=0&k=20&c=-tOqzOMwfhq0JZrX0mfEHE4R-vaUua5I4rcuSlSeGs0=",
+        "cuisine": "Thai",
+        "description": "A stir-fried noodle dish made with rice noodles, tofu, shrimp, or chicken, bean sprouts, peanuts, and a tangy tamarind sauce.",
+        "price_rs": 795.44
+      },
+      {
+        "id": 4,
+        "name": "Tacos al Pastor",
+        "img": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2021/05/al-pastor-3507w.jpg",
+        "cuisine": "Mexican",
+        "description": "Grilled marinated pork served on corn tortillas with pineapple, onion, cilantro, and a squeeze of lime.",
+        "price_rs": 704.63
+      },
+      {
+        "id": 5,
+        "name": "Croissant",
+        "img": "https://www.shutterstock.com/image-photo/one-croissant-closeup-isolated-on-600nw-2316898155.jpg",
+        "cuisine": "French",
+        "description": "A buttery, flaky pastry made with layers of dough and filled with chocolate, almond paste, or simply enjoyed plain.",
+        "price_rs": 286.48
+      },
+      {
+        "id": 6,
+        "name": "Curry Chicken",
+        "img": "https://kitchenofdebjani.com/wp-content/uploads/2023/04/easy-indian-chicken-curry-Recipe-for-beginners-Debjanir-rannaghar.jpg",
+        "cuisine": "Indian",
+        "description": "A flavorful dish made with chicken pieces simmered in a spiced tomato-based sauce, often served with rice or naan bread.",
+        "price_rs": 817.68
+      },
+      {
+        "id": 7,
+        "name": "Fish and Chips",
+        "img": "https://media.istockphoto.com/id/656630296/photo/delicious-crispy-fish-and-chips-close-up.jpg?s=612x612&w=0&k=20&c=zPhFGFFRPwiI7XJTM_qKtmpb_TWf-KXEgCwf3zi0OqM=",
+        "cuisine": "British",
+        "description": "Deep-fried battered fish served with crispy fries, often accompanied by tartar sauce and mushy peas.",
+        "price_rs": 1017.18
+      },
+      {
+        "id": 8,
+        "name": "Hamburger",
+        "img": "https://media.istockphoto.com/id/520410807/photo/cheeseburger.jpg?s=612x612&w=0&k=20&c=fG_OrCzR5HkJGI8RXBk76NwxxTasMb1qpTVlEM0oyg4=",
+        "cuisine": "American",
+        "description": "A grilled beef patty served on a bun with lettuce, tomato, onion, pickles, and condiments, such as ketchup and mustard.",
+        "price_rs": 639.31
+      },
+      {
+        "id": 9,
+        "name": "Paella",
+        "img": "https://houseofnasheats.com/wp-content/uploads/2023/08/Mixed-Paella-Recipe-1.jpg",
+        "cuisine": "Spanish",
+        "description": "A traditional Spanish rice dish cooked with saffron, seafood, chicken, and vegetables, often served in a large shallow pan.",
+        "price_rs": 1254.40
+      },
+      {
+        "id": 10,
+        "name": "Peking Duck",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQluoDX1YJP5SSiZfqoOtaAingie-tfCgvbVxzylR6bvg&s",
+        "cuisine": "Chinese",
+        "description": "A famous Chinese dish consisting of roasted duck served with thin pancakes, green onions, and hoisin sauce.",
+        "price_rs": 1648.79
+      },
+      {
+        "id": 11,
+        "name": "Lasagna",
+        "img": "https://t3.ftcdn.net/jpg/01/00/52/14/360_F_100521407_15ViliDWGLkB1N6Lwh5DQg9MePJa5tbw.jpg",
+        "cuisine": "Italian",
+        "description": "A layered pasta dish made with sheets of lasagna noodles, ground meat, tomato sauce, and creamy béchamel sauce.",
+        "price_rs": 929.36
+      },
+      {
+        "id": 12,
+        "name": "Gyros",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGykXG6wLl5qlAT40Xw75EJMo8MpWywAMpjDDHknU1ew&s",
+        "cuisine": "Greek",
+        "description": "Grilled slices of seasoned meat (often lamb or chicken) served in a pita with tomatoes, onions, and tzatziki sauce.",
+        "price_rs": 795.44
+      },
+      {
+        "id": 13,
+        "name": "Biryani",
+        "img": "https://static.toiimg.com/thumb/54308405.cms?width=1200&height=900",
+        "cuisine": "Indian",
+        "description": "A fragrant rice dish cooked with basmati rice, meat (such as chicken, lamb, or goat), spices, and caramelized onions.",
+        "price_rs": 1149.12
+      },
+      {
+        "id": 14,
+        "name": "Pho",
+        "img": "https://www.recipetineats.com/wp-content/uploads/2019/04/Beef-Pho_6.jpg",
+        "cuisine": "Vietnamese",
+        "description": "A Vietnamese noodle soup consisting of broth, rice noodles, herbs, and meat (commonly beef or chicken), often garnished with lime, bean sprouts, and chili peppers.",
+        "price_rs": 806.93
+      },
+      {
+        "id": 15,
+        "name": "Moussaka",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjan4Rt_NlSfMSGGAPwQkrHXWVR81QRvs9H-iutcBahg&s",
+        "cuisine": "Greek",
+        "description": "A baked casserole dish made with layers of eggplant, potatoes, ground meat (often lamb or beef), and a creamy béchamel sauce.",
+        "price_rs": 1048.75
+      },
+      {
+        "id": 16,
+        "name": "Ramen",
+        "img": "https://media.istockphoto.com/id/1365977387/photo/ramen-with-steaming-sizzle.jpg?s=612x612&w=0&k=20&c=8-Dij3YocgfVa2kj37msXT_iqzIgbqq0Ta3c1G4_-A0=",
+        "cuisine": "Japanese",
+        "description": "A Japanese noodle soup dish consisting of Chinese-style wheat noodles served in a meat or fish-based broth, often flavored with soy sauce or miso, and toppings such as sliced pork, seaweed, and green onions.",
+        "price_rs": 724.92
+      },
+      {
+        "id": 17,
+        "name": "Chicken Tikka Masala",
+        "img": "https://media.istockphoto.com/id/1227594550/photo/chicken-curry-creamy-chicken-butter.jpg?s=612x612&w=0&k=20&c=U9SzDx7mjCA5iS1qb8cDUNNkIGD6mJJhwLvEHXL-OlE=",
+        "cuisine": "Indian",
+        "description": "Chunks of grilled marinated chicken served in a creamy tomato-based sauce, often flavored with spices such as garam masala, turmeric, and cumin.",
+        "price_rs": 998.26
+      },
+      {
+        "id": 18,
+        "name": "Pierogi",
+        "img": "https://media.istockphoto.com/id/1061037198/photo/fried-dumplings-stuffed-with-cabbage-and-meat-sprinkled-with-bacon-greaves-and-chopped.jpg?s=612x612&w=0&k=20&c=b8U5k8SmvEkqQez5sDXk-38R0vHfgFlU7hfaWs_DRUQ=",
+        "cuisine": "Polish",
+        "description": "Dumplings filled with various savory fillings, such as mashed potatoes, cheese, meat, or sauerkraut, typically boiled or fried and served with sour cream or butter.",
+        "price_rs": 817.68
+      },
+      {
+        "id": 19,
+        "name": "Sushi Burrito",
+        "img": "https://media.istockphoto.com/id/1148621124/photo/sushi-burrito-is-a-new-fusion-japanese-food-with-modern-society.jpg?s=612x612&w=0&k=20&c=yS2FWCqrkpoffCDNDyS2pLWa3n3VNFmS2qmXK72FTyQ=",
+        "cuisine": "Japanese",
+        "description": "A fusion of Japanese sushi and Mexican burrito, typically consisting of sushi rice, fish, vegetables, and condiments wrapped in a large sheet of seaweed.",
+        "price_rs": 1134.21
+      },
+      {
+        "id": 20,
+        "name": "Shawarma",
+        "img": "https://media.istockphoto.com/id/1421688556/photo/beef-shawarma-on-a-dark-background-shawarma-with-beef-in-pita-bread.jpg?s=612x612&w=0&k=20&c=wAhnmKwTKhukglXVPQBR2FI0w4h07mwpgz0QSTY99e0=",
+        "cuisine": "Middle Eastern",
+        "description": "Thinly sliced marinated meat (often lamb, chicken, or beef) wrapped in a flatbread with tahini sauce, vegetables, and sometimes pickles or fries.",
+        "price_rs": 943.83
+      }
+    ]
+  }
+  
