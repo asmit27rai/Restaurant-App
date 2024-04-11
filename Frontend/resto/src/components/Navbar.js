@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-
+import {BrowserRouter as Link} from 'react-router-dom';
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef(null);
@@ -12,7 +12,6 @@ const Navbar = () => {
     setShowModal(false);
   };
 
-
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark justify-content-between">
       <div className="d-flex align-items-center">
@@ -21,13 +20,11 @@ const Navbar = () => {
         </a>
       </div>
       <form className="form-inline">
-      <button type="button" className="btn btn-primary m-2" >
-          Register
-        </button>
-        <button type="button" className="btn btn-primary m-2" >
-          LoginIn
-        </button>
-        <button type="button" className="btn btn-primary m-2" onClick={toggleModal}>
+        <button
+          type="button"
+          className="btn btn-primary m-2"
+          onClick={toggleModal}
+        >
           About Us
         </button>
       </form>

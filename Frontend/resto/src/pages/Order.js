@@ -1,48 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Order = () => {
+const Order = ({ dish, onClose, onOrder }) => {
+  const [quantity, setQuantity] = useState(1);
+  const [address, setAddress] = useState("");
+  const [totalPrice, setTotalPrice] = useState(dish.price_rs);
+
+  const handleQuantityChange = (e) => {
+    const newQuantity = parseInt(e.target.value);
+    setQuantity(newQuantity);
+    setTotalPrice(newQuantity * dish.price_rs);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onOrder();
+    onClose();
+  };
+
   return (
-    <div
-      className="jumbotron shadow-lg p-3 mb-5 bg-white rounded mt-5"
-      style={{ height: "70vh", width: "50vw", marginLeft: "400px" }}
-    >
-      <h1 className="display-4">Name Of Dish</h1>
-      <p className="lead">
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
-      <hr className="my-4" />
-      <div className="form-group row">
-        <label for="colFormLabel" className="col-sm-2 col-form-label">
-          <b style={{fontSize:'xx-larger'}}>Address : </b>
-        </label>
-        <div className="col-sm-10">
-          <input
-            type="text"
-            className="form-control"
-            id="colFormLabel"
-            placeholder="Fill The Address"
-          />
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card shadow-lg p-3 mb-5 bg-white rounded">
+            <div className="card-body text-center">
+              <img
+                src={dish.img}
+                alt={dish.name}
+                className="img-thumbnail rounded-circle mb-4"
+                style={{ width: "200px", height: "200px", objectFit: "cover" }}
+              />
+              <h2 className="card-title mb-4">Order {dish.name}</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="address" className="form-label">Address</label>
+                  <input type="text" className="form-control" id="address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="quantity" className="form-label">Quantity</label>
+                  <input type="number" className="form-control" id="quantity" value={quantity} onChange={handleQuantityChange} required />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="totalPrice" className="form-label">Total Price</label>
+                  <input type="text" className="form-control" id="totalPrice" value={`Rs. ${totalPrice}`} readOnly />
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="form-group col-md-4">
-        <label for="inputState">Amount Of Dish</label>
-        <select id="inputState" class="form-control">
-          <option selected>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-        </select>
-      </div>
-      <p>
-        <b>Price To Be Paid : </b>
-      </p>
-      <a className="btn btn-primary btn-lg" href="#" role="button">
-        Order Now
-      </a>
     </div>
   );
 };
+
 export default Order;
