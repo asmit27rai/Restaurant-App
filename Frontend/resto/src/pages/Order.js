@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Order = ({ dish, onClose, onOrder }) => {
   const [quantity, setQuantity] = useState(1);
   const [address, setAddress] = useState("");
   const [totalPrice, setTotalPrice] = useState(dish.price_rs);
+  const [dishName, setDishName] = useState(dish.name);
 
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value);
@@ -16,6 +18,20 @@ const Order = ({ dish, onClose, onOrder }) => {
     onOrder();
     onClose();
   };
+
+  // const submit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post("http://localhost:3000/", {
+  //       dishName: dishName,
+  //       quantity: quantity,
+  //       address: address,
+  //       totalPrice: totalPrice
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className="container mt-5">
@@ -30,7 +46,7 @@ const Order = ({ dish, onClose, onOrder }) => {
                 style={{ width: "200px", height: "200px", objectFit: "cover" }}
               />
               <h2 className="card-title mb-4">Order {dish.name}</h2>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} action="POST">
                 <div className="mb-3">
                   <label htmlFor="address" className="form-label">Address</label>
                   <input type="text" className="form-control" id="address" value={address} onChange={(e) => setAddress(e.target.value)} required />

@@ -10,6 +10,8 @@ const Body = () => {
     alert("Your order is placed.");
   };
 
+
+
   return (
     <>
       {Dishes.dishes.map((dish) => (

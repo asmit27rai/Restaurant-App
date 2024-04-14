@@ -53,7 +53,6 @@
 
 
 import React from "react";
-
 const Register = () => {
   return (
     <div className="container mt-5">
@@ -137,3 +136,5 @@ const Register = () => {
 };
 
 export default Register;
+
+

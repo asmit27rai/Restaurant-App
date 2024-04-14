@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import {BrowserRouter as Link} from 'react-router-dom';
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef(null);
@@ -12,6 +11,9 @@ const Navbar = () => {
     setShowModal(false);
   };
 
+
+
+
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark justify-content-between">
       <div className="d-flex align-items-center">
@@ -20,6 +22,70 @@ const Navbar = () => {
         </a>
       </div>
       <form className="form-inline">
+        <button
+          className="btn btn-primary m-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop"
+        >
+          Ordered Item
+        </button>
+
+        <div
+          className="offcanvas offcanvas-start"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          id="staticBackdrop"
+          aria-labelledby="staticBackdropLabel"
+        >
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="staticBackdropLabel">
+              Orders
+            </h5>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="offcanvas-body">
+            <div>I will not close if you click outside of me.</div>
+          </div>
+        </div>
+        <button
+          className="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop"
+          aria-controls="staticBackdrop"
+        >
+          Reservations
+        </button>
+
+        <div
+          className="offcanvas offcanvas-start"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          id="staticBackdrop"
+          aria-labelledby="staticBackdropLabel"
+        >
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="staticBackdropLabel">
+              Reservations
+            </h5>
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="offcanvas-body">
+            <div>I will not close if you click outside of me.</div>
+          </div>
+        </div>
         <button
           type="button"
           className="btn btn-primary m-2"

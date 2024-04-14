@@ -2,9 +2,31 @@ import "./App.css";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Order from "./pages/Order";
+// import OrderModel from "./mongo";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
+// import express from "express";
+// import cors from "cors";
+// const app = express()
+// app.use(express.json())
+// app.use(express.urlencoded({extended:true}))
+// app.use(cors())
+// app.get("/",cors(),(req,res)=>{
 
+// })
+// app.post("/",async(req,res)=>{
+//   const {dishName,quantity,address,totalPrice}=req.body
+//   const data={
+//     dishName: dishName,
+//     quantity: quantity,
+//     address: address,
+//     totalPrice: totalPrice
+//   }
+//   await OrderModel.insertMany([data])
+// })
+// app.listen(3000,()=>{
+//   console.log("Port Connected")
+// })
 function App() {
   const [isHome, setIsHome] = useState(true);
 
