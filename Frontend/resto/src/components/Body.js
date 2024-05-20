@@ -1,17 +1,9 @@
-import React, { useState } from "react";
+
+import React from "react";
 import Dishes from "../Dishes.json";
-import Order from "../pages/Order";
+import { Link } from "react-router-dom";
 
 const Body = () => {
-  const [showOrderForm, setShowOrderForm] = useState(false);
-  const [selectedDish, setSelectedDish] = useState(null);
-
-  const handleOrder = () => {
-    alert("Your order is placed.");
-  };
-
-
-
   return (
     <>
       {Dishes.dishes.map((dish) => (
@@ -37,34 +29,24 @@ const Body = () => {
                   <h5 className="card-title">{dish.name}</h5>
                   <p className="card-text">{dish.description}</p>
                   <p className="card-text">
-                    <p className="card-text">
-                      <b>Cuisine Type : </b>
-                      {dish.cuisine}
-                    </p>
-                    <p className="card-text">
-                      <b>Price : Rs.</b>
-                      {dish.price_rs}
-                    </p>
-                    <button type="button" className="btn btn-primary" onClick={() => {
-                      setSelectedDish(dish);
-                      setShowOrderForm(true);
-                    }}>
+                    <b>Cuisine Type: </b>
+                    {dish.cuisine}
+                  </p>
+                  <p className="card-text">
+                    <b>Price: Rs. </b>
+                    {dish.price_rs}
+                  </p>
+                  <Link to="/api/booking/order" state={{ dish }}>
+                    <button type="button" className="btn btn-primary">
                       Order Now
                     </button>
-                  </p>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
       ))}
-      {showOrderForm && (
-        <Order
-          dish={selectedDish}
-          onClose={() => setShowOrderForm(false)}
-          onOrder={handleOrder}
-        />
-      )}
     </>
   );
 };

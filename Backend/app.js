@@ -1,9 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
-import cors from "cors"
-import db from "./database/db.js"
-// import { errorMiddleWare } from "./error/error.js";
-import signroute from "./routes/signroute.js"
+import userRoute from "./routes/userRoute.js";
+import bookingRoute from "./routes/bookingRoute.js";
+import cors from "cors";
+import db from "./database/db.js";
 const app = express();
 
 
@@ -17,7 +17,17 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/signup",signroute);
+
+const corsOption = {
+    origin:'http://localhost:3000',
+    credentials:true
+};
+app.use(cors(corsOption));
+
 db();
-// app.use(errorMiddleWare)
+
+app.use("/api/user",userRoute);
+app.use("/api/booking",bookingRoute);
+
+
 export default app;

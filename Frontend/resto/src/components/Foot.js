@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Foot = () => {
   return (
     <div className="container">
@@ -20,5 +19,4 @@ const Foot = () => {
     </div>
   );
 }
-
 export default Foot;

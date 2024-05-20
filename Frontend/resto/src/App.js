@@ -1,66 +1,39 @@
-import "./App.css";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 import Order from "./pages/Order";
-// import OrderModel from "./mongo";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState } from "react";
-// import express from "express";
-// import cors from "cors";
-// const app = express()
-// app.use(express.json())
-// app.use(express.urlencoded({extended:true}))
-// app.use(cors())
-// app.get("/",cors(),(req,res)=>{
+import BookTab from "./pages/BookTab";
 
-// })
-// app.post("/",async(req,res)=>{
-//   const {dishName,quantity,address,totalPrice}=req.body
-//   const data={
-//     dishName: dishName,
-//     quantity: quantity,
-//     address: address,
-//     totalPrice: totalPrice
-//   }
-//   await OrderModel.insertMany([data])
-// })
-// app.listen(3000,()=>{
-//   console.log("Port Connected")
-// })
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<Home/>
+  },
+  {
+    path:"/api/user/register",
+    element:<Register/>
+  },
+  {
+    path:"/api/user/login",
+    element:<Login/>
+  },
+  {
+    path:"/api/booking/order",
+    element:<Order/>
+  },
+  {
+    path:"/api/booking/booking",
+    element:<BookTab/>
+  }
+]);
+
 function App() {
-  const [isHome, setIsHome] = useState(true);
-
-  const togglePage = () => {
-    setIsHome(prevIsHome => !prevIsHome);
-  };
-
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Register />} />
-        <Route path="/order/:id" component={Order} />
-      </Routes>
-
-      <div className="d-grid gap-2">
-        <button
-          className="btn btn-primary"
-          type="button"
-          onClick={togglePage}
-        >
-          {isHome ? (
-            <Link to="/signup" style={{ textDecoration: 'none', color: 'white' }}>
-              Book A Table At Resto
-            </Link>
-          ) : (
-            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-              Back To Home
-            </Link>
-          )}
-        </button>
-      </div>
-    </Router>
+    <div className="p-4 h-screen flex items-center justify-center">
+      <RouterProvider router={router}/>
+    </div>
   );
-}
-
+};
 export default App;

@@ -1,37 +1,35 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 
-const Order = ({ dish, onClose, onOrder }) => {
+const Order = () => {
+  const location = useLocation();
+  const { dish } = location.state || {};
+
   const [quantity, setQuantity] = useState(1);
   const [address, setAddress] = useState("");
-  const [totalPrice, setTotalPrice] = useState(dish.price_rs);
-  const [dishName, setDishName] = useState(dish.name);
+  const [totalPrice, setTotalPrice] = useState(dish?.price_rs || 0);
+  const [dishName, setDishName] = useState(dish?.name || "");
 
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value);
     setQuantity(newQuantity);
-    setTotalPrice(newQuantity * dish.price_rs);
+    setTotalPrice(newQuantity * (dish?.price_rs || 0));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onOrder();
-    onClose();
+    console.log({
+      dishName,
+      quantity,
+      address,
+      totalPrice,
+    });
   };
 
-  // const submit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await axios.post("http://localhost:3000/", {
-  //       dishName: dishName,
-  //       quantity: quantity,
-  //       address: address,
-  //       totalPrice: totalPrice
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  if (!dish) {
+    return <p>No dish selected. Please go back and select a dish.</p>;
+  }
 
   return (
     <div className="container mt-5">
@@ -46,20 +44,48 @@ const Order = ({ dish, onClose, onOrder }) => {
                 style={{ width: "200px", height: "200px", objectFit: "cover" }}
               />
               <h2 className="card-title mb-4">Order {dish.name}</h2>
-              <form onSubmit={handleSubmit} action="POST">
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label htmlFor="address" className="form-label">Address</label>
-                  <input type="text" className="form-control" id="address" value={address} onChange={(e) => setAddress(e.target.value)} required />
+                  <label htmlFor="address" className="form-label">
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="quantity" className="form-label">Quantity</label>
-                  <input type="number" className="form-control" id="quantity" value={quantity} onChange={handleQuantityChange} required />
+                  <label htmlFor="quantity" className="form-label">
+                    Quantity
+                  </label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="quantity"
+                    value={quantity}
+                    onChange={handleQuantityChange}
+                    required
+                  />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="totalPrice" className="form-label">Total Price</label>
-                  <input type="text" className="form-control" id="totalPrice" value={`Rs. ${totalPrice}`} readOnly />
+                  <label htmlFor="totalPrice" className="form-label">
+                    Total Price
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="totalPrice"
+                    value={`Rs. ${totalPrice}`}
+                    readOnly
+                  />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">
+                  Submit
+                </button>
               </form>
             </div>
           </div>

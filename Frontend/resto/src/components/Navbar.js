@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef(null);
@@ -10,10 +11,6 @@ const Navbar = () => {
   const closeModal = () => {
     setShowModal(false);
   };
-
-
-
-
   return (
     <nav className="navbar fixed-top navbar-dark bg-dark justify-content-between">
       <div className="d-flex align-items-center">
@@ -86,6 +83,10 @@ const Navbar = () => {
             <div>I will not close if you click outside of me.</div>
           </div>
         </div>
+        <Link to="/api/user/register" >
+        <button type="button" class="btn btn-outline-primary m-2">Join Us</button>
+        </Link>
+        
         <button
           type="button"
           className="btn btn-primary m-2"
